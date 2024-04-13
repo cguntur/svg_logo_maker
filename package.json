@@ -1,0 +1,24 @@
+{
+  "name": "svg_logo_maker",
+  "version": "1.0.0",
+  "description": "svg logo maker",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Chandrika Sista",
+  "license": "ISC",
+  "dependencies": {
+    "fix-esm": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
