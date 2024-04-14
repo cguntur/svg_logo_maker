@@ -17,6 +17,11 @@ const questions = [
     },
     {
         type: 'input',
+        message: 'Enter a color for your text',
+        name: 'text_color'
+    },
+    {
+        type: 'input',
         message: 'Enter a color for your logo',
         name: 'logo_color'
     },
@@ -34,32 +39,40 @@ function init() {
         questions
     )
     .then((response) =>
-        //writeToFile(fileName, response)
-        //console.log(response);
-        renderShape(response)
+        renderSvg(response)
     )
-
 }
 
-function renderShape(response){
+function renderSvg(response){
     console.log(response);
+
+    const renderedShape = shapeEl(response);
+    const logoText = textEl(response);
+
+    const svg = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${renderedShape}${logoText}</svg>`
+    console.log(svg);
     
-    let selectedShape = response.shape;
-    console.log("Selected Shape: " + selectedShape);
+}
+
+
+function textEl(response){
+    return `<text text-anchor="middle" fill="${response.text_color}" font-size="50">${response.logo_text}</text>`;
+}
+
+function shapeEl(response){
+
+    const selectedShape = response.shape;
+
     if(selectedShape == "Triangle"){
-        const newShape = new Triangle(response.logo_text, response.logo_color, response.shape);
-        console.log(newShape);
-        console.log(newShape.render());
+        const newShape = new Triangle(response.logo_color);
+        return newShape.render();
     }else if(selectedShape == "Circle"){
-        const newShape = new Circle(response.logo_text, response.logo_color, response.shape);
-        console.log(newShape);
-        console.log(newShape.render());
+        const newShape = new Circle(response.logo_color);
+        return newShape.render();
     }else if(selectedShape == "Square"){
-        const newShape = new Square(response.logo_text, response.logo_color, response.shape);
-        console.log(newShape);
-        console.log(newShape.render());
+        const newShape = new Square(response.logo_color);
+        return newShape.render();
     }
 }
-
 // Function call to initialize app
 init();
