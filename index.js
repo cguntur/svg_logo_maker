@@ -1,7 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const {Circle, Square, Triangle} = require("./lib/shapes");
+const Triangle = require("./lib/Triangle.js");
+const Circle = require("./lib/Circle.js");
+const Square = require("./lib/Square.js");
 
 const questions = [
     {
@@ -68,7 +70,7 @@ function shapeEl(response){
         return newShape.render();
     }else if(selectedShape == "Circle"){
         const newShape = new Circle(response.logo_color);
-        return newShape.render();
+        return newShape.render(colorValues);
     }else if(selectedShape == "Square"){
         const newShape = new Square(response.logo_color);
         return newShape.render();
