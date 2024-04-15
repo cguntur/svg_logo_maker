@@ -12,8 +12,8 @@
 ## Installation Instructions
 
 - Download the files from the repo
-- Run ### `npm install` to install the necessary dependencies
-- Run ### `node index.js filename` to generate the readme file
+- Run `npm install` to install the necessary dependencies
+- Run `node index.js filename` to generate the readme file
 
 ## Testing Instructions
 
@@ -21,4 +21,5 @@
 - You can run `npm test` to test the three shape classes
 
 ## Working Example
-<video src='https://share.cleanshot.com/rVqtMJmS' width=400 />
+[View the website here](https://share.cleanshot.com/rVqtMJmS)
+
