@@ -57,7 +57,7 @@ function renderSvg(response){
     //Save svg to examples folder
     fileNameExt = fileName + '.svg';
     fs.writeFileSync('./examples/' + fileNameExt, svg);
-    console.log(svg);
+    console.log("Generated " + fileNameExt);
 }
 
 function textEl(response){
@@ -68,7 +68,7 @@ function textEl(response){
     }else if(selectedShape == "Circle"){
         return `<text x="100" y="120" text-anchor="middle" fill="${response.text_color}" font-size="70">${response.logo_text}</text>`;
     }else if(selectedShape == "Square"){
-        return `<text text-anchor="middle" x="90" y="100" fill="${response.text_color}" font-size="50">${response.logo_text}</text>`;
+        return `<text text-anchor="middle" x="100" y="110" fill="${response.text_color}" font-size="50">${response.logo_text}</text>`;
     }
 }
 
