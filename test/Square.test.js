@@ -5,6 +5,6 @@ describe('Square', () => {
         const shape = new Square("blue");
         colorValues = shape.setColor();
   
-        expect(shape.render(colorValues)).toEqual(`<rect x="10" y="10" width="30" height="30" ${colorValues}/>`);
+        expect(shape.render(colorValues)).toEqual(`<rect width="200" height="200" ${colorValues}/>`);
     });
 });

@@ -5,6 +5,6 @@ describe('Circle', () => {
         const shape = new Circle("blue");
         colorValues = shape.setColor();
   
-        expect(shape.render(colorValues)).toEqual(`<circle cx="50" cy="50" r="50" ${colorValues}/>`);
+        expect(shape.render(colorValues)).toEqual(`<circle cx="100" cy="100" r="100" ${colorValues}/>`);
     });
 });
